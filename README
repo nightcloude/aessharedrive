@@ -1,0 +1,38 @@
+Step 1: Create the D1 Database
+1.	Go to https://dash.cloudflare.com
+2.	In the left sidebar click Workers & Pages
+3.	Click D1 (under Storage)
+4.	Click Create database
+5.	Name it: ts-drive
+6.	Click Create
+After it’s created you’ll see the database.
+Click on it → go to the Settings tab and copy the Database ID (long UUID). Keep it for later if needed.
+________________________________________
+Step 2: Create the Worker
+1.	Still in Workers & Pages, click Create → Create Worker
+2.	Give it a name, e.g. ts-collaboration-drive
+3.	Click Deploy (this creates an empty “Hello World” worker)
+________________________________________
+Step 3: Paste the code
+1.	After deploy, click Edit code
+2.	Delete everything in the editor
+3.	Paste the full contents of worker.js
+4.	Click Save and Deploy
+________________________________________
+Step 4: Bind the D1 database
+1.	Go back to the Worker’s page
+2.	Click the Settings tab
+3.	Scroll to Bindings → click Add → choose D1 database
+4.	
+o	Variable name: DB
+o	D1 database: select ts-drive
+5.	Click Save
+6.	Redeploy if it asks (or just click Deploy again)
+________________________________________
+Step 5: Test
+Open your Worker URL (something like https://ts-collaboration-drive.your-subdomain.workers.dev)
+You should see the login page.
+Demo login:
+•	Username: teacher
+•	Password: teacher123
+
